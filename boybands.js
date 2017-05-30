@@ -11,19 +11,35 @@ var currentBand = "";
 var currentVeggie = "";
 
 // Get a reference to the appropriate DOM element for bands
-var bandElement = document.getElementById(???);
+var bandElement = document.getElementById("boy-bands");
+
+
 
 // Get a reference to the appropriate DOM element for vegetables
-var veggieElement = ???;
+var veggieElement = document.getElementById("vegetables");
 
 // Start looping
 for (var loopTracker = 0; loopTracker < loopCount; loopTracker += 1) {
   
   // Add the band names into the correct <div>
-  currentBand = ???;
-
-  
+  currentBand = bands[loopTracker];
   // Add the veggie names into the correct <div>
-  currentVeggie = ???;
+  currentVeggie = vegetables[loopTracker];
+  
+  // Create a <p> element
+  var para = document.createElement("P");
+  // Create a text node and enter what variable in loop you want printed to div
+  var t = document.createTextNode(currentBand);
+  // Append text (variable) to <p>
+  para.appendChild(t);
+  // Append para variable to bandElement because it will print it to the document by document.getElementBy Id??
+  bandElement.appendChild(para);
+
+// Repeat for second div
+  var para2 = document.createElement("P");
+  var t2 = document.createTextNode(currentVeggie);
+  para2.appendChild(t2);
+  veggieElement.appendChild(para2);
+
 
 }
